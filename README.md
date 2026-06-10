@@ -29,32 +29,25 @@ Login to Azure using CLI:
 
 az login
 
+
 📦 Getting Started
-
 1. Clone the Repository
+git clone https://github.com/sibaram-srs/azure-linux-vm-terraform.git
 
-git clone https://github.com/your-username/terraform-azure-linux-vm.git
-cd terraform-azure-linux-vm
-
+cd azure-linux-vm-terraform
 2. Initialize Terraform
-
 terraform init
-
 3. Validate Configuration
-
 terraform validate
-
 4. Review Execution Plan
-
 terraform plan
-
 5. Deploy Infrastructure
-
 terraform apply
+
 Type yes when prompted.
 
 🧹 Destroy Infrastructure (Optional)
 
 To remove all created resources:
-terraform destroy
 
+terraform destroy
