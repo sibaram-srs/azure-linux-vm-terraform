@@ -31,12 +31,11 @@ Login to Azure using CLI:
 az login
 
 
-📦 Getting Started
-
 ## 📦 Getting Started
 
-1. Clone the Repository
 ```bash
+1. Clone the Repository
+
 git clone https://github.com/sibaram-srs/azure-linux-vm-terraform.git
 
 cd azure-linux-vm-terraform
