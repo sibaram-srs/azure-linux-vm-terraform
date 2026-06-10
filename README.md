@@ -15,6 +15,7 @@ This project provisions an Azure Linux Virtual Machine using Terraform.
 - Subnet
 - Network Interface
 - Public IP
+- Network security group
 - Linux Virtual Machine
 
 ## Prerequisites
@@ -36,7 +37,7 @@ az login
 
 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/terraform-azure-linux-vm.git
+git clone https://github.com/sibaram-srs/azure-linux-vm-terraform.git
 
 cd azure-linux-vm-terraform
 
