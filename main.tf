@@ -17,6 +17,12 @@ resource "azurerm_virtual_network" "vnet" {
   address_prefixes     = ["10.0.1.0/24"]
   }
 
+resource "azurerm_public_ip" "PIP" {
+  name                = "VMPIP"
+  resource_group_name = azurerm_resource_group.RG1.name
+  location            = azurerm_resource_group.RG1.location
+  allocation_method   = "Static"
+}
 
   resource "azurerm_network_interface" "nic" {
   name                = "vm-nic"
@@ -29,13 +35,6 @@ resource "azurerm_virtual_network" "vnet" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id = azurerm_public_ip.PIP.id
   }
-}
-
-resource "azurerm_public_ip" "PIP" {
-  name                = "VMPIP"
-  resource_group_name = azurerm_resource_group.RG1.name
-  location            = azurerm_resource_group.RG1.location
-  allocation_method   = "Static"
 }
 
 resource "azurerm_network_security_group" "nsg" {
