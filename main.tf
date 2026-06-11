@@ -1,18 +1,18 @@
 resource "azurerm_resource_group" "RG1" {
-  name     = "sunny-rg"
+  name     = "lab-rg"
   location = "West Europe"
 }
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "VM-network"
   location            = "West Europe"
-  resource_group_name = "sunny-rg"
+  resource_group_name = "lab-rg"
   address_space       = ["10.0.0.0/16"]
   }
 
   resource "azurerm_subnet" "subent" {
   name                 = "example-subnet"
-  resource_group_name  = "sunny-rg"
+  resource_group_name  = "lab-rg"
   virtual_network_name = "VM-network"
   address_prefixes     = ["10.0.1.0/24"]
   }
@@ -27,7 +27,7 @@ resource "azurerm_public_ip" "PIP" {
   resource "azurerm_network_interface" "nic" {
   name                = "vm-nic"
   location            = "West Europe"
-  resource_group_name = "sunny-rg"
+  resource_group_name = "lab-rg"
 
   ip_configuration {
     name                          = "internal"
@@ -62,7 +62,7 @@ resource "azurerm_subnet_network_security_group_association" "nsgassociation" {
 
 
 resource "azurerm_linux_virtual_machine" "VM" {
-  name                = "sunny-machine"
+  name                = "lab-machine"
   resource_group_name = azurerm_resource_group.RG1.name
   location            = azurerm_resource_group.RG1.location
   size                = "Standard_B2ls_v2"
